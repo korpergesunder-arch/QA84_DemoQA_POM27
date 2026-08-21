@@ -1,6 +1,7 @@
 package com.demoqa.pages;
 
 import com.demoqa.core.BasePage;
+import com.demoqa.pages.alertsFrameWindows.AlertsPage;
 import com.demoqa.pages.bookStore.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +14,15 @@ public class SidePanel extends BasePage {
     @FindBy(css = "a[href='/login']")
     WebElement loginLink;
     public LoginPage getLogin() {
-        click(loginLink);
+        clickWithJS(loginLink,0,500);
         return new LoginPage(driver);
     }
+
+    @FindBy(css = "a[href='/alerts']")
+    WebElement alertItem;
+    public AlertsPage getAlerts() {
+        clickWithJS(alertItem,0,200);
+        return new AlertsPage(driver);
+    }
 }
+

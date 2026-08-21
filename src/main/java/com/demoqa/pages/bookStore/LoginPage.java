@@ -1,6 +1,7 @@
 package com.demoqa.pages.bookStore;
 
 import com.demoqa.core.BasePage;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,9 +17,23 @@ public class LoginPage extends BasePage {
 
     public LoginPage enterUserData(String userName, String password) {
 
-        type(userNameInput,userName);
-        type(userPasswordInput,password);
+        typeWithJS(userNameInput,userName,0,200);
+        typeWithJS(userPasswordInput,password,0,200);
 
+        return this;
+    }
+        @FindBy(id = "login")
+        WebElement loginButton;
+    public LoginPage clickOnLoginButton() {
+        clickWithJS(loginButton,0,500);
+        return this;
+    }
+
+    @FindBy(id = "userName-value")
+    WebElement userNameValue;
+
+    public LoginPage verifyUserName(String name) {
+        Assertions.assertTrue(isContainsText(name, userNameValue));
         return this;
     }
 }
