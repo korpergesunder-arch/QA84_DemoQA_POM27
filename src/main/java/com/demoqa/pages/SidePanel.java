@@ -9,6 +9,7 @@ import com.demoqa.pages.bookStore.LoginPage;
 import com.demoqa.pages.widgets.MenuPage;
 import com.demoqa.pages.widgets.SelectPage;
 import com.demoqa.pages.widgets.SliderPage;
+import com.demoqa.pages.widgets.ToolTipsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -69,6 +70,13 @@ public class SidePanel extends BasePage {
     public SliderPage getSlider() {
         clickWithJS(slider,0,400);
         return new SliderPage(driver);
+    }
+    @FindBy(css = "a[href='/tool-tips']")
+    WebElement toolTips;
+
+    public ToolTipsPage getToolTips() {
+        clickWithJS(toolTips,0,200);
+        return new ToolTipsPage(driver);
     }
 }
 

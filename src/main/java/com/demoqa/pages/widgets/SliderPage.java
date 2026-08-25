@@ -24,7 +24,7 @@ public class SliderPage extends BasePage {
         @FindBy(id = "sliderValue")
         WebElement sliderValue;
     public SliderPage verifySliderValue(String number) {
-        Assertions.assertEquals(number,sliderValue.getDomAttribute("value"));
+        Assertions.assertEquals(number, getValue(sliderValue, "value"));
         return this;
     }
 }
