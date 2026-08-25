@@ -2,6 +2,7 @@ package com.demoqa.pages.widgets;
 
 import com.demoqa.core.BasePage;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,8 +14,10 @@ public class SliderPage extends BasePage {
     @FindBy(css = ".range-slider")
     WebElement rangeSlider;
     public SliderPage moveSlider() {
-       // js.executeScript("arguments[0].scrollIntoView(true);", rangeSlider);
-        actions.dragAndDropBy(rangeSlider,450,0).perform();
+       // js.executeScript("arguments[0].scrollIntoView(true);", rangeSlider);от Zolotarenko
+        //scrollWithJS(0,30);// от Arkadii
+       // actions.dragAndDropBy(rangeSlider,450,0).perform();
+        rangeSlider.sendKeys(Keys.END);//от Stupachenko
         return this;
     }
 
