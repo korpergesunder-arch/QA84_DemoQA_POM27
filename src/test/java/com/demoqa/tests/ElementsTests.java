@@ -81,7 +81,6 @@ public class ElementsTests extends TestBase {
                 .navigateWithJS("https://icarro-v1.netlify.app/let-car-work")
                 .verifyFaveIconTitle()
                 ;
-
     }
     @Test
     public void getAllLinksTest(){

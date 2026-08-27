@@ -25,6 +25,7 @@ public abstract class BasePage {
         js = (JavascriptExecutor) driver;
         softly = new SoftAssertions();
         actions = new Actions(driver);
+
     }
 
     public void scrollWithJS(int x, int y) {
