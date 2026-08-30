@@ -25,7 +25,6 @@ public abstract class BasePage {
         js = (JavascriptExecutor) driver;
         softly = new SoftAssertions();
         actions = new Actions(driver);
-
     }
 
     public void scrollWithJS(int x, int y) {
@@ -116,14 +115,31 @@ public abstract class BasePage {
             connection.connect();
             int statusCode = connection.getResponseCode();
             if (statusCode >=400){
-                System.out.println(url + " --> " + connection.getResponseMessage() + " is a BROKEN links");
+                // System.out.println(url + " --> " + connection.getResponseMessage() + " is a BROKEN links");
+                softly.fail(url + " --> " + connection.getResponseMessage() + " is a BROKEN links");
             }else {
-                System.out.println(url + " --> " + connection.getResponseMessage());
+                //System.out.println(url + " --> " + connection.getResponseMessage());
+                softly.assertThat(statusCode).isLessThan(400);
             }
         } catch (Exception e) {
-            System.out.println(url + " --> " + "ERROR occurred");
+            //System.out.println(url + " --> " + "ERROR occurred");
+            softly.fail(url + " --> " + "ERROR occurred");
+        }
+    }
+    public void clickWithRectangle(WebElement element){
+        Rectangle rectangle = element.getRect();
+
+        int xOffset = rectangle.getWidth() /4;
+        int yOffset = rectangle.getHeight() /2;
+
+        actions.moveToElement(element).perform();
+        actions.moveByOffset(-xOffset,-yOffset).click().perform();
+    }
+    public void pause(int millis){
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 }
-
-

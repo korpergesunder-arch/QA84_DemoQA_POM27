@@ -1,15 +1,14 @@
-package com.demoqa.tests;
+package com.demoqa.tests.tests;
 
-import com.demoqa.core.TestBase;
 import com.demoqa.pages.HomePage;
 import com.demoqa.pages.SidePanel;
 import com.demoqa.pages.widgets.MenuPage;
 import com.demoqa.pages.widgets.SelectPage;
 import com.demoqa.pages.widgets.SliderPage;
 import com.demoqa.pages.widgets.ToolTipsPage;
+import com.demoqa.tests.core.TestBase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.support.FindBy;
 
 public class WidgetsTests extends TestBase {
     SidePanel sidePanel;

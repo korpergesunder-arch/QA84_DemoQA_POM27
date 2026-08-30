@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import static com.demoqa.core.BasePage.js;
 
 public class TextBoxPage extends BasePage {
     public TextBoxPage(WebDriver driver) {
@@ -16,13 +17,13 @@ public class TextBoxPage extends BasePage {
     public TextBoxPage copyPast(String address) {
         typeWithJS(currentAddress,address,0,400);
         //type current address text
-        actions.keyDown(Keys.COMMAND).sendKeys("a").keyUp(Keys.COMMAND).perform();
+        actions.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).perform();
         //copy current address text
-        actions.keyDown(Keys.COMMAND).sendKeys("c").keyUp(Keys.COMMAND).perform();
+        actions.keyDown(Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).perform();
         //press TAB to switch focus to permanent address
         actions.sendKeys(Keys.TAB).perform();
         //past current address text to  permanent address
-        actions.keyDown(Keys.COMMAND).sendKeys("v").keyUp(Keys.COMMAND).perform();
+        actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).perform();
 
         return this;
     }
@@ -42,20 +43,23 @@ public class TextBoxPage extends BasePage {
         Assertions.assertEquals(current[1],permanent[1]);
         return this;
     }
-    @FindBy(id ="userName")
+    @FindBy(id = "userName")
     WebElement userName;
+
     @FindBy(id = "userEmail")
     WebElement userEmail;
-    @FindBy(id ="permanentAddress")
+
+    @FindBy(id = "permanentAddress")
     WebElement permanentAddress;
 
-    public TextBoxPage enterPersonalData(String name, String email, String address) {
-        typeWithJS(userName,name,0,300);
-        typeWithJS(userEmail,email,0,300);
-        typeWithJS(currentAddress,address,0,300);
-        typeWithJS(permanentAddress,address,0,300);
-        return this;
-    }
+
+public TextBoxPage enterPersonalData(String name, String email, String address) {
+    type(userName, name);
+    type(userEmail, email);
+    type(currentAddress, address);
+    type(permanentAddress, address);
+    return this;
+}
 
     public TextBoxPage enterPersonalDataWithJS(String name, String email) {
         js.executeScript("document.getElementById('userName').value='" + name + "';");

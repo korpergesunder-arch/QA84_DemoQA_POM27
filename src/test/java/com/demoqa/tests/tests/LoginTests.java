@@ -1,9 +1,9 @@
-package com.demoqa.tests;
+package com.demoqa.tests.tests;
 
-import com.demoqa.core.TestBase;
 import com.demoqa.pages.HomePage;
 import com.demoqa.pages.SidePanel;
 import com.demoqa.pages.bookStore.LoginPage;
+import com.demoqa.tests.core.TestBase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

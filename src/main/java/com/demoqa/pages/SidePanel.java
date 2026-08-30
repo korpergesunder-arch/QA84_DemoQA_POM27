@@ -9,6 +9,7 @@ import com.demoqa.pages.bookStore.LoginPage;
 import com.demoqa.pages.elements.BrokenLinksImagesPage;
 import com.demoqa.pages.elements.ButtonPage;
 import com.demoqa.pages.elements.TextBoxPage;
+import com.demoqa.pages.elements.UploadPage;
 import com.demoqa.pages.widgets.MenuPage;
 import com.demoqa.pages.widgets.SelectPage;
 import com.demoqa.pages.widgets.SliderPage;
@@ -100,5 +101,12 @@ public class SidePanel extends BasePage {
         clickWithJS(broken,0,500);
         return new BrokenLinksImagesPage(driver);
     }
-}
 
+    @FindBy(css="a[href='/upload-download']")
+    WebElement uploads;
+
+    public UploadPage getUpload() {
+        clickWithJS(uploads,0,600);
+        return new UploadPage(driver);
+    }
+}
