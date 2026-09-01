@@ -96,6 +96,7 @@ public class ElementsTests extends TestBase {
     public void checkBrokenLinksTest(){
         sidePanel.getBrokenLinkImages();
         brokenLinks.checkBrokenLinks();
+
     }
     @Test
     public void checkBrokenImagesTest(){
