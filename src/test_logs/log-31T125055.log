@@ -1,0 +1,10 @@
+3705 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Reading https://raw.githubusercontent.com/bonigarcia/webdrivermanager/master/docs/mirror/geckodriver to seek geckodriver
+3897 [main] INFO  i.g.b.wdm.online.Downloader -- Downloading https://github.com/mozilla/geckodriver/releases/download/v0.37.1/geckodriver-v0.37.1-win64.zip
+5375 [main] INFO  i.g.b.wdm.online.Downloader -- Extracting driver from compressed file geckodriver-v0.37.1-win64.zip
+5498 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.gecko.driver as C:\Users\7515534\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+8447 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Reading https://raw.githubusercontent.com/bonigarcia/webdrivermanager/master/docs/mirror/geckodriver to seek geckodriver
+8609 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.gecko.driver as C:\Users\7515534\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+10901 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Reading https://raw.githubusercontent.com/bonigarcia/webdrivermanager/master/docs/mirror/geckodriver to seek geckodriver
+11038 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.gecko.driver as C:\Users\7515534\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe
+13346 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Reading https://raw.githubusercontent.com/bonigarcia/webdrivermanager/master/docs/mirror/geckodriver to seek geckodriver
+13405 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.gecko.driver as C:\Users\7515534\.cache\selenium\geckodriver\win64\0.37.1\geckodriver.exe

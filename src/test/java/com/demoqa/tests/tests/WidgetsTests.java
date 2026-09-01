@@ -8,6 +8,7 @@ import com.demoqa.pages.widgets.SliderPage;
 import com.demoqa.pages.widgets.ToolTipsPage;
 import com.demoqa.tests.core.TestBase;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class WidgetsTests extends TestBase {
@@ -54,6 +55,7 @@ public class WidgetsTests extends TestBase {
         ;
     }
     @Test
+    @Tag("smoky")
     public void toolTipsTest(){
         sidePanel.getToolTips();
         new ToolTipsPage(driver).hoversOnToolTips()
